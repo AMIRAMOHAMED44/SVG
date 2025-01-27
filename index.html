@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>svgFace</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        svg{
+            border: 3px solid rgb(185, 182, 187);
+            border-radius: 50%;
+            margin: 150px 32%;
+        }
+        #name {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.75);
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            pointer-events: none;
+            display: none;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <div id="name"></div>
+    <svg width="600px" height="600px">
+        <circle  id="left-eye" cx="200" cy="220" r="50" fill="rgb(214, 212, 216)" />
+        <circle  id="right-eye" cx="400" cy="220" r="50" fill="rgb(214, 212, 216)" />
+        <path id="mouth" d="M200 420 Q300 480 400 420" fill="none" stroke="rgb(214, 212, 216)" stroke-width="5" />
+    </svg>
+
+    <script>
+        var leftEye = document.getElementById("left-eye");
+        var rightEye = document.getElementById("right-eye");
+        var mouth = document.getElementById("mouth");
+        var name = document.getElementById("name");
+    
+        leftEye.onmouseover = function() {
+            leftEye.style.fill = "teal";
+            name.style.display = "block";
+            name.textContent = "Left Eye";
+        };
+        leftEye.onmouseout = function() {
+            leftEye.style.fill = "rgb(214, 212, 216)";
+            name.style.display = "none"
+        };
+    
+        rightEye.onmouseover = function() {
+            rightEye.style.fill = "teal";
+            name.style.display = "block";
+            name.textContent = "Right Eye";
+        };
+        rightEye.onmouseout = function() {
+            rightEye.style.fill = "rgb(214, 212, 216)";
+            name.style.display = "none"; 
+        };
+    
+        mouth.onmouseover = function() {
+            mouth.style.stroke = "orange";
+            name.style.display = "block";
+            name.textContent = "Mouth";
+        };
+        mouth.onmouseout = function() {
+            mouth.style.stroke = "rgb(214, 212, 216)";
+            name.style.display = "none"
+        };
+    </script>
+    
+</body>
+</html>
+
+
+
